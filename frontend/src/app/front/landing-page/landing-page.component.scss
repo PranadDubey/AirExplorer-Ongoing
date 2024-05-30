@@ -1,0 +1,82 @@
+.card1 {
+  min-height: 70vh;
+  background-color: #555dfd;
+  margin-left: 11rem;
+}
+
+.tagline1 {
+  color: white;
+
+  font-size: 50px;
+  width: 60%;
+}
+.fromField {
+  width: 14rem;
+  height: 3rem;
+  border: none;
+  border-radius: 0.7rem 0.7rem 0.7rem 0.7rem;
+  font-size: 1.3rem;
+  padding: 0.8rem;
+}
+
+.toField {
+  width: 14rem;
+  height: 3rem;
+  border: none;
+  border-radius: 0.7rem 0.7rem 0.7rem 0.7rem;
+  font-size: 1.3rem;
+  padding: 0.8rem;
+}
+
+.Calender {
+  width: 14rem;
+  height: 3rem;
+  border: none;
+  border-radius: 0.7rem 0.7rem 0.7rem 0.7rem;
+  padding: 0.8rem;
+}
+
+.passengerNo {
+  color: #555dfd;
+  background-color: white;
+  padding: 0.4rem;
+  border-radius: 0.7rem;
+  border: none;
+  font-size: 2rem;
+}
+
+.searchButton {
+  color: #555dfd;
+  background-color: white;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.7rem 1.5rem 0.7rem 1.5rem;
+  margin-left: 14rem;
+}
+// .card2 {
+//   transform: translateY(-95%);
+//   background-image: url("https://legacy.travelnoire.com/wp-content/uploads/2021/07/cristiano-pinto-vEdJ1lMdkeQ-unsplash.jpg");
+//   background-size: 100%;
+//   height: 70vh;
+//   background-size: 100%;
+//   background-repeat: no-repeat;
+//   margin-left: 51rem;
+// }
+// .imgdesc {
+//   color: white;
+//   background-color: #555dfd;
+//   border: none;
+//   padding: 0.5rem;
+//   border-radius: 0rem 0rem 0.5rem 0rem;
+//   width: 28%;
+// }
+
+.card2 {
+  background-image: url("https://legacy.travelnoire.com/wp-content/uploads/2021/07/cristiano-pinto-vEdJ1lMdkeQ-unsplash.jpg");
+  margin-top: 20rem;
+  background-size: 100%;
+  min-height: 100vh;
+  min-width: 30vw;
+  margin: 0;
+  background-repeat: no-repeat;
+}

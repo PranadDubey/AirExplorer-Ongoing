@@ -1,0 +1,48 @@
+<div class="container-fluid mt-5 mb-5">
+  <div class="row ms-5 mt-5">
+    <div
+      class="col-4 ms-5 ps-5 rounded-3 mt-5"
+      style="
+        display: flex;
+        flex-direction: column;
+        background-color: #f7f7f7;
+        box-shadow: #e8e8e8;
+      "
+    >
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-7 mb-5 mt-5">
+      <div
+        class="container-fluid text-white p-3 shadow"
+        style="background-color: black; border-radius: 8px 8px 0 0"
+      >
+        <div class="row">
+          <div class="col-12">Passenger 1</div>
+        </div>
+      </div>
+      <div class="container-fluid" style="border-radius: 0px 0px 12px 12px">
+        <div class="row shadow-lg p-3" style="background-color: #f7f7f7">
+          <div class="col-5 mt-2">
+            <div class="mb-3 fs-5 bold">Title</div>
+            <div style="font-weight: 500">{{ user().gender }}</div>
+            <div class="line-1 mt-1 mb-5"></div>
+            <div class="mb-3 fs-5 bold">First Name</div>
+            <div style="font-weight: 500">{{ user().firstName }}</div>
+            <div class="line-1 mt-1 mb-5"></div>
+            <div class="mb-3 fs-5 bold">Last Name</div>
+            <div style="font-weight: 500">{{ user().lastName }}</div>
+            <div class="line-1 mt-1 mb-5"></div>
+            <div class="mb-3 fs-5 bold">Phone number</div>
+            <div style="font-weight: 500">{{ user().phone }}</div>
+            <div class="line-1 mt-1 mb-5"></div>
+          </div>
+          <div class="col-5 mt-2">
+            <div class="mb-3 fs-5 bold">Email Address</div>
+            <div style="font-weight: 500">{{ user().email }}</div>
+            <div class="line-1 mt-1 mb-5"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

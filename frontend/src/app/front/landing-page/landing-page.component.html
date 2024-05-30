@@ -1,0 +1,126 @@
+<div class="container-fluid gap-0">
+  <div class="row">
+    <div class="col-7 gap-0">
+      <div class="card1 mb-5">
+        <div class="tagline1 ms-4 mb-2 pt-5 ps-3 pb-3">Discover</div>
+        <div class="tagline1 ms-4 mb-2 pt-3 ps-3 pb-3">The</div>
+        <div class="tagline1 ms-4 pt-3 ps-3">Extraordinary</div>
+        <form [formGroup]="searchForm" (submit)="navigateTo()">
+          <select
+            class="form-select mt-5 ms-5 text-white"
+            style="width: 200px; background-color: #555dfd; border: none"
+            aria-label="Default select example"
+            formControlName="trip"
+            (change)="checkTrip($event)"
+          >
+            <option value="One-Way">One-Way/Round-Trip</option>
+            <option
+              class="bg-white text-dark"
+              id="tripCheck"
+              *ngFor="let trip of trips"
+            >
+              {{ trip }}
+            </option>
+          </select>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-6">
+                <div class="pt-5 ms-5 text-white fs-4">From</div>
+                <input
+                  class="fromField mt-2 ms-5"
+                  list="airports"
+                  name="airport"
+                  placeholder="From"
+                  formControlName="departure_city"
+                />
+                <datalist id="airports">
+                  <option
+                    *ngFor="let city of airports"
+                    value="{{ city }}"
+                  ></option>
+                </datalist>
+              </div>
+
+              <div class="col-6">
+                <div class="pt-5 ms-1 text-white fs-4">To</div>
+                <input
+                  class="toField ms-1 mt-2"
+                  list="destinations"
+                  name="destination"
+                  placeholder="To"
+                  formControlName="arrival_city"
+                  (keyup)="searchCity($event)"
+                />
+                <datalist id="destinations">
+                  <option
+                    *ngFor="let city of airports"
+                    value="{{ city }}"
+                  ></option>
+                </datalist>
+              </div>
+            </div>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-6">
+                  <div class="text-white ms-5 fs-4 mt-5">Departure</div>
+                  <input
+                    class="Calender ms-5 ps-3 mt-2"
+                    type="date"
+                    formControlName="departure_date"
+                  />
+                </div>
+                @if(check()){
+                <div class="col-6">
+                  <div class="text-white ms-3 fs-4 mt-5">Return</div>
+                  <input
+                    class="Calender ms-3 ps-3 mt-2"
+                    type="date"
+                    formControlName="return_date"
+                  />
+                </div>
+                }
+              </div>
+            </div>
+            <div class="text-white fs-4 mt-4 ms-5">Passengers</div>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-2">
+                  <input
+                    class="passengerNo mt-2 ms-5"
+                    type="button"
+                    value="-"
+                    (click)="removePassenger()"
+                  />
+                </div>
+                <div class="col-1">
+                  <div class="text-white mt-3 fs-5">
+                    {{ passengerNumber }}
+                  </div>
+                </div>
+                <div class="col-1">
+                  <input
+                    class="passengerNo mt-2 mb-5"
+                    type="button"
+                    value="+"
+                    (click)="addPassenger()"
+                  />
+                </div>
+                <div class="col-8">
+                  <button class="searchButton me-auto fs-5" type="submit">
+                    Search
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-5 gap-0">
+      <div class="card2">
+        PHOTO HERE
+        <div class="imgdesc">Santorini,Greece</div>
+      </div>
+    </div>
+  </div>
+</div>

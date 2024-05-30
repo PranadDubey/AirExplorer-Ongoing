@@ -1,0 +1,110 @@
+<div class="container-fluid mt-5 mb-5">
+  <div class="row ms-5 mt-5">
+    <div
+      class="col-4 ms-5 ps-5 rounded-3 mt-5"
+      style="
+        display: flex;
+        flex-direction: column;
+        background-color: #f7f7f7;
+        box-shadow: #e8e8e8;
+      "
+    >
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-7 mb-5 mt-5">
+      <div
+        class="container-fluid text-white p-3 shadow"
+        style="background-color: black; border-radius: 8px 8px 0 0"
+      >
+        <div class="row">
+          <div class="col-12">
+            {{ isExisting() ? "Update" : "Add" }} a Passenger
+          </div>
+        </div>
+      </div>
+      <form
+        [formGroup]="addForm"
+        (submit)="isExisting() ? submitUpdated() : submitForm()"
+      >
+        <div class="container-fluid" style="border-radius: 0px 0px 12px 12px">
+          <div class="row shadow-lg p-3" style="background-color: #f7f7f7">
+            <div class="col-5 mt-2">
+              <select
+                class="form-select mt-2 mb-3"
+                style="width: 200px"
+                aria-label="Default select example"
+                formControlName="gender"
+              >
+                <option>Title</option>
+
+                <option *ngFor="let gender of genders">
+                  {{ gender }}
+                </option>
+              </select>
+              <div class="form__group field mb-5">
+                <input
+                  type="input"
+                  class="form__field"
+                  placeholder="Name"
+                  name="name"
+                  id="name"
+                  required
+                  formControlName="firstName"
+                />
+                <label for="name" class="form__label fs-5">First Name</label>
+              </div>
+              <div class="form__group field mb-5">
+                <input
+                  type="input"
+                  class="form__field"
+                  placeholder="Name"
+                  name="name"
+                  id="name"
+                  required
+                  formControlName="lastName"
+                />
+                <label for="name" class="form__label fs-5">Last Name</label>
+              </div>
+              <div class="form__group field mb-5">
+                <input
+                  type="input"
+                  class="form__field"
+                  placeholder="Name"
+                  name="name"
+                  id="name"
+                  required
+                  formControlName="phone"
+                />
+                <label
+                  for="name"
+                  class="form__label fs-5"
+                  style="font-size: 100px"
+                  >Phone</label
+                >
+              </div>
+            </div>
+            <div class="col-5">
+              <div class="form__group field">
+                <input
+                  type="input"
+                  class="form__field"
+                  placeholder="Name"
+                  name="name"
+                  id="name"
+                  required
+                  formControlName="email"
+                />
+                <label for="name" class="form__label fs-5">Email Address</label>
+              </div>
+              <button
+                class="border border-none p-2 shadow-md rounded-3 text-white"
+              >
+                {{ isExisting() ? "Update" : "Add" }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,128 @@
+<body class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-6"></div>
+      <div class="col-6 mt-5">
+        <div class="container1 mt-5 p-5">
+          <div class="title fs-3">Registration</div>
+          <div class="content">
+            <form [formGroup]="registerForm" (submit)="submitForm()">
+              <div class="user-details">
+                <div class="input-box">
+                  <span class="details">First Name</span>
+                  <input
+                    type="text"
+                    placeholder="Enter your first name"
+                    required
+                    formControlName="firstName"
+                  />
+                </div>
+                <div class="input-box">
+                  <span class="details">Last Name</span>
+                  <input
+                    type="text"
+                    placeholder="Enter your last name"
+                    required
+                    formControlName="lastName"
+                  />
+                </div>
+                <div class="input-box">
+                  <span class="details">Email</span>
+                  <input
+                    type="text"
+                    placeholder="Enter your email"
+                    required
+                    formControlName="email"
+                  />
+                </div>
+                <div class="input-box">
+                  <span class="details">Phone Number</span>
+                  <input
+                    type="text"
+                    placeholder="Enter your number"
+                    required
+                    formControlName="phone"
+                  />
+                </div>
+                <div class="input-box">
+                  <span class="details">Password</span>
+                  <input
+                    type="text"
+                    placeholder="Enter your password"
+                    required
+                    formControlName="password"
+                  />
+                </div>
+              </div>
+
+              <!-- <div class="dropdown"> -->
+              <!-- <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  {{ registerForm.get("gender")?.value }}
+                </button>
+                <ul class="dropdown-menu">
+                  @for(gender of genders; track gender){
+                  <li>
+                    <button
+                      class="dropdown-item"
+                      (click)="registerForm.get('gender')?.setValue(gender)"
+                      
+                    >
+                      {{ gender }}
+                    </button>
+                  </li>
+                  }
+                </ul> -->
+              <select
+                class="form-select mt-5"
+                style="width: 200px"
+                aria-label="Default select example"
+                formControlName="gender"
+              >
+                <option>Title</option>
+
+                <option *ngFor="let gender of genders">
+                  {{ gender }}
+                </option>
+              </select>
+              <!-- </div> -->
+
+              <div class="gender-details">
+                <!-- <input type="radio" name="gender" id="dot-1" />
+                <input type="radio" name="gender" id="dot-2" />
+                <input type="radio" name="gender" id="dot-3" />
+                <span class="gender-title">Gender</span>
+                <div class="category" formControlName="gender">
+                  <label for="dot-1">
+                    <span class="dot one"></span>
+                    <span class="gender1">Male</span>
+                  </label>
+                  <label for="dot-2">
+                    <span class="dot two"></span>
+                    <span class="gender1">Female</span>
+                  </label>
+                  <label for="dot-3">
+                    <span class="dot three"></span>
+                    <span class="gender1">Prefer not to say</span>
+                  </label>
+                </div> -->
+              </div>
+              <div class="button">
+                <input
+                  type="submit"
+                  class="button"
+                  value="Register"
+                  routerLink="profile"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

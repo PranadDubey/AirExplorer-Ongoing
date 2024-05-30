@@ -1,0 +1,36 @@
+POST http://localhost:3000/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName":"abc",
+    "lastName":"def",
+    "phone":"12345",
+    "password":"abc123",
+    "email":"xyz"
+    
+}
+
+###
+
+GET http://localhost:3000/login HTTP/1.1
+
+###
+
+GET http://localhost:3000/users/9/co-passengers
+
+###
+
+GET http://localhost:3000/users/9/co-passengers/5ade5609-0a93-46c5-81f0-851d6de8c306
+
+###
+
+PUT http://localhost:3000/users/9/co-passengers/5ade5609-0a93-46c5-81f0-851d6de8c306
+Content-Type: application/json
+
+{
+    "firstName":"qwerty"
+}
+
+###
+
+GET https://airlabs.co/api/v9/schedules?dep_iata=MIA&api_key=39b7c0d9-c76d-4aab-8bb7-366a9b81a450

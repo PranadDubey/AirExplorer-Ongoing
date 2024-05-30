@@ -1,0 +1,49 @@
+<body class="min-vh-100 position-relative p-5" style="height: 100vh">
+  <div class="container p-5">
+    <div class="row p-5">
+      <div class="col-8"></div>
+      <div class="col-4">
+        <div class="container1 mt-5">
+          <form [formGroup]="loginForm" (submit)="submitForm()">
+            <div class="title">Login</div>
+            <div class="input-box underline mt-5">
+              <input
+                type="text"
+                placeholder="Enter Your loginID"
+                required
+                formControlName="loginID"
+              />
+              <div class="underline"></div>
+            </div>
+            <div class="input-box mt-5">
+              <input
+                type="password"
+                placeholder="Enter Your Password"
+                required
+                formControlName="password"
+              />
+              <div class="underline"></div>
+            </div>
+            <div class="input-box button">
+              <input class="bg-dark" type="submit" name="" value="Continue" />
+            </div>
+          </form>
+          <div
+            class="mt-1"
+            style="
+              font-weight: 200;
+              font-size: 15px;
+              display: flex;
+              justify-content: center;
+            "
+          >
+            Dont have account?
+            <a routerLink="/register">Click Here.</a>
+
+            {{ response }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

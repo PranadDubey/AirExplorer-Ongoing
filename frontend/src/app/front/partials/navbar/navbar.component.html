@@ -1,0 +1,45 @@
+<div class="d-flex p-4 position-absolute top-0 start-0 end-0 z-3">
+  <div
+    class="logo navbar-center logo fs-4 ms-4 mt-2"
+    style="cursor: pointer"
+    routerLink=""
+  >
+    AirExplorer
+  </div>
+
+  <div class="d-flex gap-5 justify-content-end ms-auto me-5">
+    <a
+      class="navbar-center fs-4 mt-2"
+      style="text-decoration: none; cursor: pointer"
+    >
+      Track
+    </a>
+    <a
+      class="navbar-center fs-4 mt-2"
+      style="text-decoration: none; cursor: pointer"
+    >
+      Services
+    </a>
+    <a
+      class="navbar-center fs-4 mt-2"
+      style="text-decoration: none"
+      routerLink="contact"
+    >
+      Contact
+    </a>
+  </div>
+
+  @if(isLoggedIn() == false){
+  <a
+    class="text-dark rounded-5 p-2 border-0 me-5"
+    style="background-color: #ffbb00; text-decoration: none"
+    routerLink="login"
+  >
+    Login/Signup
+  </a>
+  } @else {
+  <button class="btn btn-dark" (click)="logOut()">
+    Hi, {{ user().firstName }}
+  </button>
+  }
+</div>

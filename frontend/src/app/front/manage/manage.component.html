@@ -1,0 +1,38 @@
+<div class="container-fluid mt-5 mb-5">
+  <div class="row ms-5 mt-5">
+    <div
+      class="col-4 ms-5 ps-5 rounded-3 mt-5"
+      style="
+        display: flex;
+        flex-direction: column;
+        background-color: #f7f7f7;
+        box-shadow: #e8e8e8;
+      "
+    >
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-7">
+      <div class="mt-5">
+        @for(copess of coPassengers(); track copess.copassengerID){
+        <div class="card p-2 mb-3">
+          <div class="d-flex align-items-center gap-3">
+            <div class="me-auto">
+              {{ copess.firstName }} {{ copess.lastName }}
+            </div>
+            <a routerLink="/co-passengers/{{ copess.copassengerID }}">
+              <i class="bi bi-pencil-fill fs-6"></i>
+            </a>
+
+            <button
+              class="btn shadow-none border-0"
+              (click)="deleteCoPassenger(copess.copassengerID)"
+            >
+              <i class="bi bi-trash-fill fs-6"></i>
+            </button>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
